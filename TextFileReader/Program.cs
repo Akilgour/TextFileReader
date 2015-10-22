@@ -13,23 +13,28 @@ namespace TextFileReader
         {
             Console.WriteLine("Please Enter File Path, then press Enter.");
             var filePath = Console.ReadLine();
-            //TODO Add check if file exists
-            var textFromFile = TextFileHelpers.ReadTextFileToString(filePath);
-            Console.WriteLine("Text From File");
-            Console.WriteLine(textFromFile);
-
-            var textAnalytics = new TextAnalytics(textFromFile);
-            Console.WriteLine("Text that is being checked");
-            Console.WriteLine(textAnalytics.OriginalText);
-            Console.WriteLine(string.Format("Total characters : {0}", textAnalytics.CharCount()));
-
-            var charDictionary = textAnalytics.TenMostFrequentChar();
-
-            foreach (var x in charDictionary)
+            if (TextFileHelpers.FileExists(filePath))
             {
-                Console.WriteLine(string.Format("{0} ({1})", x.Key, x.Value ));
-            }
+                var textFromFile = TextFileHelpers.ReadTextFileToString(filePath);
+                Console.WriteLine("Text From File");
+                Console.WriteLine(textFromFile);
 
+                var textAnalytics = new TextAnalytics(textFromFile);
+                Console.WriteLine("Text that is being checked");
+                Console.WriteLine(textAnalytics.OriginalText);
+                Console.WriteLine(string.Format("Total characters : {0}", textAnalytics.CharCount()));
+
+                var charDictionary = textAnalytics.TenMostFrequentChar();
+
+                foreach (var x in charDictionary)
+                {
+                    Console.WriteLine(string.Format("{0} ({1})", x.Key, x.Value));
+                }
+            }
+            else
+            {
+                Console.WriteLine("File does not exist.");
+            }
             Console.ReadKey();
         }
     }

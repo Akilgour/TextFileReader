@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,13 +13,18 @@ namespace TextFileReader.Helpers
         {
             StringBuilder sb = new StringBuilder();
             string line;
-            System.IO.StreamReader file = new System.IO.StreamReader(filePath);
+            StreamReader file = new StreamReader(filePath);
             while ((line = file.ReadLine()) != null)
             { 
                 sb.Append(line);
             }
             file.Close();
             return sb.ToString();
+        }
+
+        public static bool FileExists(string filePath)
+        {
+            return File.Exists(filePath);
         }
     }
 }

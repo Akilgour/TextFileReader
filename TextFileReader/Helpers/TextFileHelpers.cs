@@ -12,7 +12,7 @@ namespace TextFileReader.Helpers
         {
             StringBuilder sb = new StringBuilder();
             string line;
-            System.IO.StreamReader file = new System.IO.StreamReader("c:\\text.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader(filePath);
             while ((line = file.ReadLine()) != null)
             { 
                 sb.Append(line);

@@ -11,11 +11,11 @@ namespace TextFileReader
     {
         static void Main(string[] args)
         {
-            var path = "foo";
-            var textFromFile = TextFileHelpers.ReadTextFileToString(path);
-          
+            Console.WriteLine("Please Enter File Path, then press Enter.");
+            var filePath = Console.ReadLine();
+            //TODO Add check if file exists
+            var textFromFile = TextFileHelpers.ReadTextFileToString(filePath);
             Console.WriteLine(textFromFile);
-           
             Console.ReadKey();
         }
     }

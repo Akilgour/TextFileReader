@@ -15,7 +15,14 @@ namespace TextFileReader
             var filePath = Console.ReadLine();
             //TODO Add check if file exists
             var textFromFile = TextFileHelpers.ReadTextFileToString(filePath);
+            Console.WriteLine("Text From File");
             Console.WriteLine(textFromFile);
+
+            var textAnalytics = new TextAnalytics(textFromFile);
+            Console.WriteLine("Text that is being checked");
+            Console.WriteLine(textAnalytics.OriginalText);
+
+
             Console.ReadKey();
         }
     }

@@ -16,8 +16,6 @@ namespace TextFileReader
             if (TextFileHelpers.FileExists(filePath))
             {
                 var textFromFile = TextFileHelpers.ReadTextFileToString(filePath);
-                Console.WriteLine("Text From File");
-                Console.WriteLine(textFromFile);
 
                 var textAnalytics = new TextAnalytics(textFromFile);
                 Console.WriteLine("Text that is being checked");
@@ -25,7 +23,7 @@ namespace TextFileReader
                 Console.WriteLine(string.Format("Total characters : {0}", textAnalytics.CharCount()));
 
                 var charDictionary = textAnalytics.TenMostFrequentChar();
-
+                Console.WriteLine("Ten most frequent characters.");
                 foreach (var x in charDictionary)
                 {
                     Console.WriteLine(string.Format("{0} ({1})", x.Key, x.Value));

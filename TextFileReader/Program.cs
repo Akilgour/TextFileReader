@@ -28,6 +28,13 @@ namespace TextFileReader
                 {
                     Console.WriteLine(string.Format("{0} ({1})", x.Key, x.Value));
                 }
+
+                var charDictionaryIgnoreCase = textAnalytics.TenMostFrequentCharIgnoreCase();
+                Console.WriteLine("Ten most frequent characters ignore case.");
+                foreach (var x in charDictionaryIgnoreCase)
+                {
+                    Console.WriteLine(string.Format("{0} ({1})", x.Key, x.Value));
+                }
             }
             else
             {

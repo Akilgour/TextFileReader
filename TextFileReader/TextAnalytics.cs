@@ -19,6 +19,10 @@ namespace TextFileReader
             TextWithoutTabAndSpace = Regex.Replace(OriginalText, @"\t| ", "");
         }
 
+        /// <summary>
+        /// Will Count the number of unique characters  
+        /// </summary>
+        /// <returns></returns>
         public int CharCount()
         {
             return TextWithoutTabAndSpace.Length;
@@ -50,8 +54,8 @@ namespace TextFileReader
                 }
             }
 
+            //This will order the Dictionary by the values
             charDictionary = charDictionary.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
-
             if (charDictionary.Count < 10)
             {
                 return charDictionary;

@@ -7,6 +7,21 @@ namespace UnitTestProject
     [TestClass]
     public class TextAnalytics_CharCount
     {
+
+        [TestMethod]
+        public void ReadEmptyString()
+        {
+            //Arrange 
+            var value = "";
+            var textAnalytics = new TextAnalytics(value);
+
+            //Act 
+            var charCount = textAnalytics.CharCount();
+
+            //Assert
+            Assert.AreEqual(0, charCount);
+        }
+
         [TestMethod]
         public void ReadThreeChar()
         {

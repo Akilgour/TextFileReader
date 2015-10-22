@@ -9,6 +9,20 @@ namespace UnitTestProject
     {
 
         [TestMethod]
+        public void ReadEmptyString()
+        {
+            //Arrange 
+            var value = "";
+            var textAnalytics = new TextAnalytics(value);
+
+            //Act 
+            var charDictionary = textAnalytics.TenMostFrequentCharUsingCase();
+
+            //Assert
+            Assert.AreEqual(0, charDictionary.Count);
+        }
+
+        [TestMethod]
         public void ReadThreeChar()
         {
             //Arrange 

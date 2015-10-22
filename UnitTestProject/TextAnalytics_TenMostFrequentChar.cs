@@ -5,7 +5,7 @@ using TextFileReader;
 namespace UnitTestProject
 {
     [TestClass]
-   public class TextAnalytics_TenMostFrequentChar
+    public class TextAnalytics_TenMostFrequentChar
     {
 
         [TestMethod]
@@ -57,5 +57,28 @@ namespace UnitTestProject
             Assert.AreEqual(2, charDictionary['C']);
         }
 
+        [TestMethod]
+        public void TestTextString()
+        {
+            //Arrange 
+            var value = "The three did feed the deer The quick brown fox jumped over the lazy dog";
+            var textAnalytics = new TextAnalytics(value);
+
+            //Act 
+            var charDictionary = textAnalytics.TenMostFrequentChar();
+
+            //Assert
+            Assert.AreEqual(10, charDictionary.Count);
+            Assert.AreEqual(12, charDictionary['e'], "Error on e");
+            Assert.AreEqual(6, charDictionary['d'], "Error on d");
+            Assert.AreEqual(5, charDictionary['h'], "Error on h");
+            Assert.AreEqual(4, charDictionary['r'], "Error on r");
+            Assert.AreEqual(4, charDictionary['o'], "Error on o");
+            Assert.AreEqual(2, charDictionary['u'], "Error on u");
+            Assert.AreEqual(3, charDictionary['t'], "Error on t");
+            Assert.AreEqual(2, charDictionary['u'], "Error on u");
+            Assert.AreEqual(2, charDictionary['f'], "Error on f");
+            Assert.AreEqual(2, charDictionary['T'], "Error on T");
+        }
     }
 }

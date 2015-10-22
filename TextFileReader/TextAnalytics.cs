@@ -20,7 +20,7 @@ namespace TextFileReader
         }
 
         /// <summary>
-        /// Will Count the number of unique characters  
+        /// Will Count the number of characters  
         /// </summary>
         /// <returns></returns>
         public int CharCount()

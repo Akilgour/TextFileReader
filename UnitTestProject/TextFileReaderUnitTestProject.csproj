@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="TextAnalytics_CharCount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextAnalytics_TenMostFrequentChar.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TextFileReader\TextFileReader.csproj">

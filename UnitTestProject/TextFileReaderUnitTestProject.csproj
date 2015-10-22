@@ -53,6 +53,12 @@
     <Compile Include="TextAnalytics_CharCount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextFileReader\TextFileReader.csproj">
+      <Project>{713dd83c-90ba-4ae4-9465-21e330ef2e37}</Project>
+      <Name>TextFileReader</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

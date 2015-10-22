@@ -22,7 +22,7 @@ namespace TextFileReader
                 Console.WriteLine(textAnalytics.OriginalText);
                 Console.WriteLine(string.Format("Total characters : {0}", textAnalytics.CharCount()));
 
-                var charDictionary = textAnalytics.TenMostFrequentChar();
+                var charDictionary = textAnalytics.TenMostFrequentCharUsingCase();
                 Console.WriteLine("Ten most frequent characters.");
                 foreach (var x in charDictionary)
                 {

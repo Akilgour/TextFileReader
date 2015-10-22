@@ -16,7 +16,7 @@ namespace UnitTestProject
             var textAnalytics = new TextAnalytics(value);
 
             //Act 
-            var charDictionary = textAnalytics.TenMostFrequentChar();
+            var charDictionary = textAnalytics.TenMostFrequentCharUsingCase();
 
             //Assert
             Assert.AreEqual(3, charDictionary.Count);
@@ -33,7 +33,7 @@ namespace UnitTestProject
             var textAnalytics = new TextAnalytics(value);
 
             //Act 
-            var charDictionary = textAnalytics.TenMostFrequentChar();
+            var charDictionary = textAnalytics.TenMostFrequentCharUsingCase();
 
             //Assert
             Assert.AreEqual(1, charDictionary.Count);
@@ -48,7 +48,7 @@ namespace UnitTestProject
             var textAnalytics = new TextAnalytics(value);
 
             //Act 
-            var charDictionary = textAnalytics.TenMostFrequentChar();
+            var charDictionary = textAnalytics.TenMostFrequentCharUsingCase();
 
             //Assert
             Assert.AreEqual(3, charDictionary.Count);
@@ -65,7 +65,7 @@ namespace UnitTestProject
             var textAnalytics = new TextAnalytics(value);
 
             //Act 
-            var charDictionary = textAnalytics.TenMostFrequentChar();
+            var charDictionary = textAnalytics.TenMostFrequentCharUsingCase();
 
             //Assert
             Assert.AreEqual(10, charDictionary.Count);
@@ -79,6 +79,24 @@ namespace UnitTestProject
             Assert.AreEqual(2, charDictionary['u'], "Error on u");
             Assert.AreEqual(2, charDictionary['f'], "Error on f");
             Assert.AreEqual(2, charDictionary['T'], "Error on T");
+        }
+
+
+        [TestMethod]
+        public void TestTextStringIgnoreCase()
+        {
+            //Arrange 
+            var value = "Aa BBbb CCc";
+            var textAnalytics = new TextAnalytics(value);
+
+            //Act 
+            var charDictionary = textAnalytics.TenMostFrequentCharIgnoreCase();
+
+            //Assert
+            Assert.AreEqual(3, charDictionary.Count);
+            Assert.AreEqual(2, charDictionary['a']);
+            Assert.AreEqual(4, charDictionary['b']);
+            Assert.AreEqual(3, charDictionary['c']);
         }
     }
 }

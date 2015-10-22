@@ -24,11 +24,21 @@ namespace TextFileReader
             return TextWithoutTabAndSpace.Length;
         }
 
-        public Dictionary<char, int> TenMostFrequentChar()
+        public Dictionary<char, int> TenMostFrequentCharUsingCase()
+        {
+            return TenMostFrequentChar(TextWithoutTabAndSpace);
+        }
+            
+        public Dictionary<char, int> TenMostFrequentCharIgnoreCase()
+        {
+            return TenMostFrequentChar(TextWithoutTabAndSpace.ToLower());
+        }
+
+        private Dictionary<char, int> TenMostFrequentChar(string value)
         {
             var charDictionary = new Dictionary<char, int>();
 
-            foreach (var x in TextWithoutTabAndSpace)
+            foreach (var x in value)
             {
                 if (charDictionary.ContainsKey(x))
                 {
@@ -51,5 +61,6 @@ namespace TextFileReader
                 return charDictionary.Take(10).ToDictionary(x => x.Key, x => x.Value);
             }
         }
+
     }
 }
